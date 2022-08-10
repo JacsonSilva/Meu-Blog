@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/pagina1')
-def hello():
-    return "<h1>Meu Primeiro Site em Python</h1>"
+@app.route('/')
+def index():
+    return render_template("index.html")
 
 @app.route("/contatos")
 def contato():
